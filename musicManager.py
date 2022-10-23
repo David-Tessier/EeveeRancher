@@ -2,7 +2,7 @@ from pygame import mixer
 
 
 class playMusic:
-    def __init__(self, song, volume, is_playing):
+    def __init__(self, song, volume):
 
         mixer.init()
         # Load audio file

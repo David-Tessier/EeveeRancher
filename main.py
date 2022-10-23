@@ -8,7 +8,6 @@ from imgManager import imgManager
 from barManager import barManager
 from feedingManager import feedingManager
 from statsManager import stats
-
 clock = pygame.time.Clock()
 
 # Game status
@@ -116,12 +115,12 @@ while loop:
         pygame.display.set_caption('Take care of ' + str(playerEevee.name))
         if is_playing_minigame and not is_playing_main:
             miniGameSong.stop()
-            mainScreenSong = playMusic('assets/music/mainTheme.wav', 0.2, False)
+            mainScreenSong = playMusic('assets/music/mainTheme.wav', 0.2)
             is_playing_main = True
             is_playing_minigame = False
 
         if not is_playing_minigame and not is_playing_main:
-            mainScreenSong = playMusic('assets/music/mainTheme.wav', 0.2, False)
+            mainScreenSong = playMusic('assets/music/mainTheme.wav', 0.2)
             is_playing_main = True
 
         can_suffer = True
@@ -143,7 +142,7 @@ while loop:
     elif Game_screen == 0:
         pygame.display.set_caption('Name your pokemon')
         if not is_playing_minigame:
-            miniGameSong = playMusic('assets/music/name_select.wav', 0.2, False)
+            miniGameSong = playMusic('assets/music/name_select.wav', 0.2)
         is_playing_minigame = True
 
         # Screen to ask for eevee Name
@@ -156,7 +155,7 @@ while loop:
         pygame.display.set_caption('Use the arrow keys to move around ! Get all the fruits')
         if is_playing_main == True:
             mainScreenSong.stop()
-            miniGameSong = playMusic('assets/music/Mini-Games-feed.wav', 0.2, False)
+            miniGameSong = playMusic('assets/music/Mini-Games-feed.wav', 0.2)
             is_playing_minigame = True
             is_playing_main = False
         # Screen for feeding minigame
@@ -202,7 +201,7 @@ while loop:
         pygame.display.set_caption('Click on your pokemon to clean him !')
         if is_playing_main == True:
             mainScreenSong.stop()
-            miniGameSong = playMusic('assets/music/wash_minigame.wav', 0.2, False)
+            miniGameSong = playMusic('assets/music/wash_minigame.wav', 0.2)
             is_playing_minigame = True
             is_playing_main = False
         flip = random.choice([False, True])
@@ -212,7 +211,7 @@ while loop:
         pygame.display.set_caption('Your pokemon as perish...')
         if is_playing_main == True:
             mainScreenSong.stop()
-            miniGameSong = playMusic('assets/music/game_over.wav', 0.2, False)
+            miniGameSong = playMusic('assets/music/game_over.wav', 0.2)
             is_playing_minigame = True
             is_playing_main = False
         grave = imgManager(screen, w / 2, h / 2, False, 'assets/UI/grave.png', 96 * 2, 96 * 2)
